@@ -1,0 +1,108 @@
+:root {
+  --color-000000: #000000;
+  --color-1d1d1f: #1d1d1f;
+  --color-302c2c: #302c2c;
+  --color-7f7f7f: #7f7f7f;
+  --color-c2c2c2: #c2c2c2;
+  --color-bfbfbf: #bfbfbf;
+  --color-e5e5e5: #e5e5e5;
+  --color-f7f7f7: #f7f7f7;
+  --color-fafafa: #fafafa;
+  --color-ffffff: #ffffff;
+  --color-primary: #0747a6;
+  --color-accent: #e65100;
+  --color-error: #7c2d35;
+  --color-warning: #ffbe00;
+
+  /**
+   * Colors
+   */
+  .c-000000 {
+    color: var(--color-000000);
+  }
+  .c-1d1d1f {
+    color: var(--color-1d1d1f);
+  }
+  .c-302c2c {
+    color: var(--color-302c2c);
+  }
+  .c-7f7f7f {
+    color: var(--color-7f7f7f);
+  }
+  .c-c2c2c2 {
+    color: var(--color-c2c2c2);
+  }
+  .c-bfbfbf {
+    color: var(--color-bfbfbf);
+  }
+  .c-e5e5e5 {
+    color: var(--color-e5e5e5);
+  }
+  .c-f7f7f7 {
+    color: var(--color-f7f7f7);
+  }
+  .c-fafafa {
+    color: var(--color-fafafa);
+  }
+  .c-ffffff {
+    color: var(--color-ffffff);
+  }
+  .c-primary {
+    color: var(--color-primary);
+  }
+  .c-accent {
+    color: var(--color-accent);
+  }
+  .c-error {
+    color: var(--color-error);
+  }
+  .c-warning {
+    color: var(--color-warning);
+  }
+
+  /**
+   * Backgrounds
+   */
+  .bg-000000 {
+    background-color: var(--color-000000);
+  }
+  .bg-1d1d1f {
+    background-color: var(--color-1d1d1f);
+  }
+  .bg-302c2c {
+    background-color: var(--color-302c2c);
+  }
+  .bg-7f7f7f {
+    background-color: var(--color-7f7f7f);
+  }
+  .bg-c2c2c2 {
+    background-color: var(--color-c2c2c2);
+  }
+  .bg-bfbfbf {
+    background-color: var(--color-bfbfbf);
+  }
+  .bg-e5e5e5 {
+    background-color: var(--color-e5e5e5);
+  }
+  .bg-f7f7f7 {
+    background-color: var(--color-f7f7f7);
+  }
+  .bg-fafafa {
+    background-color: var(--color-fafafa);
+  }
+  .bg-ffffff {
+    background-color: var(--color-ffffff);
+  }
+  .bg-primary- {
+    background-color: var(--color-primary);
+  }
+  .bg-accent- {
+    background-color: var(--color-accent);
+  }
+  .bg-error- {
+    background-color: var(--color-error);
+  }
+  .bg-warning- {
+    background-color: var(--color-warning);
+  }
+}

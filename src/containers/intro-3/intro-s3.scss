@@ -1,0 +1,40 @@
+/**
+ * Aligned items with fixed widths
+ */
+$margin: 0.5rem;
+
+// xs (iPhone X)
+// sm (Responsive)
+.grid {
+  &-wrapper {
+    display: grid;
+    justify-content: center;
+    padding: $margin;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(calc(#{90%} + 2 * #{$margin}), max-content)
+    );
+  }
+  &-item {
+    margin: $margin;
+    min-width: 90%;
+  }
+}
+
+// md (iPad)
+// lg (iPad Pro)
+// xl (Desktop)
+@media screen and (min-width: 768px) {
+  .grid {
+    &-wrapper {
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(calc(#{28%} + 2 * #{$margin}), max-content)
+      );
+    }
+    &-item {
+      min-width: 28%;
+    }
+  }
+}

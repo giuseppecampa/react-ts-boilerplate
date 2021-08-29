@@ -1,0 +1,26 @@
+// https://codepen.io/sosuke/pen/Pjoqqp
+
+.filter-grey {
+  filter: invert(54%) sepia(0%) saturate(0%) hue-rotate(150deg) brightness(92%)
+    contrast(91%);
+}
+
+.filter-white {
+  filter: invert(100%) sepia(0%) saturate(7461%) hue-rotate(167deg)
+    brightness(96%) contrast(114%);
+}
+
+.filter-primary {
+  filter: invert(15%) sepia(94%) saturate(2956%) hue-rotate(211deg)
+    brightness(94%) contrast(95%);
+}
+
+.filter-accent {
+  filter: invert(49%) sepia(48%) saturate(7108%) hue-rotate(4deg)
+    brightness(93%) contrast(101%);
+}
+
+.filter-error {
+  filter: invert(8%) sepia(96%) saturate(5769%) hue-rotate(337deg)
+    brightness(88%) contrast(99%);
+}

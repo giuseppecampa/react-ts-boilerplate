@@ -1,0 +1,25 @@
+$transparent: rgba(0, 0, 0, 0);
+$background: #ffffff;
+$shadow: #333333;
+
+.MuiTabs-root {
+  max-width: 100%;
+}
+
+.MuiTabs-fixed {
+  overflow-x: scroll !important;
+
+  /**
+   * UPGRADE: uncomment for gradient scroll effect
+   */
+  // background: linear-gradient(to right, $background 20%, $transparent),
+  //   linear-gradient(to right, $transparent, $background 80%) 0 100%,
+  //   linear-gradient(to right, $shadow, $transparent 20%),
+  //   linear-gradient(to left, $shadow, $transparent 20%);
+  // background-attachment: local, local, scroll, scroll;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}

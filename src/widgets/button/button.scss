@@ -1,0 +1,42 @@
+$primary: var(--color-primary);
+$accent: var(--color-accent);
+$white: var(--color-ffffff);
+
+button {
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+@each $name, $color in ("primary": $primary, "accent": $accent) {
+  .#{$name} {
+    background-color: $color;
+    color: $white;
+
+    &:hover {
+      opacity: 0.6;
+    }
+    &:active {
+      opacity: 0.8;
+    }
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    &-flip {
+      background-color: transparent;
+      color: $color;
+      padding: 0;
+
+      &-border {
+        background-color: transparent;
+        color: $color;
+        border: solid 2px $color;
+      }
+    }
+  }
+}

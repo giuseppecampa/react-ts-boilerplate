@@ -1,0 +1,11 @@
+.accordion {
+  &-icon {
+    margin-right: 0.25rem;
+    transform: rotate(0deg);
+    transition: 0.25s;
+  }
+
+  &-rotate {
+    transform: rotate(135deg);
+  }
+}

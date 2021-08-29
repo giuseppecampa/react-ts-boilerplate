@@ -1,0 +1,24 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="15.228"
+  height="12.973"
+  viewBox="0 0 15.228 12.973"
+>
+  <defs>
+    <style>
+      .a {
+        fill: none;
+        stroke: #059881;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+        stroke-width: 1.5px;
+      }
+    </style>
+  </defs>
+  <path
+    class="a"
+    d="M-1498.278-1461.077l5.478,5.338,7.647-11.181"
+    transform="translate(1499.338 1467.962)"
+  />
+</svg>

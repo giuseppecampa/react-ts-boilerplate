@@ -1,0 +1,43 @@
+:root {
+  --font-family-ios: "SF Pro Display", "SF Pro Icons", "Helvetica Neue",
+    "Helvetica";
+}
+
+$sizes: 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 24, 28, 32, 36, 48;
+
+@each $size in $sizes {
+  .font-#{$size}-extralight {
+    font-family: var(--font-family-ios);
+    font-size: #{$size}px;
+    font-weight: 100;
+    line-height: #{$size + 10}px;
+  }
+
+  .font-#{$size}-light {
+    font-family: var(--font-family-ios);
+    font-size: #{$size}px;
+    font-weight: 200;
+    line-height: #{$size + 10}px;
+  }
+
+  .font-#{$size} {
+    font-family: var(--font-family-ios);
+    font-size: #{$size}px;
+    font-weight: 400;
+    line-height: #{$size + 10}px;
+  }
+
+  .font-#{$size}-semibold {
+    font-family: var(--font-family-ios);
+    font-size: #{$size}px;
+    font-weight: 500;
+    line-height: #{$size + 10}px;
+  }
+
+  .font-#{$size}-bold {
+    font-family: var(--font-family-ios);
+    font-size: #{$size}px;
+    font-weight: 600;
+    line-height: #{$size + 10}px;
+  }
+}

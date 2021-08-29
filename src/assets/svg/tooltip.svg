@@ -1,0 +1,21 @@
+<svg
+  width="16"
+  height="16"
+  viewBox="0 0 16 16"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <rect width="16" height="16" rx="2" fill="#7C2D35" />
+  <rect
+    width="2"
+    height="2"
+    rx="1"
+    transform="matrix(1 0 0 -1 7 5)"
+    fill="white"
+    stroke="white"
+    stroke-linejoin="round"
+  />
+  <rect width="2" height="6" transform="matrix(1 0 0 -1 7 14)" fill="white" />
+  <rect x="6" y="7" width="4" height="1" rx="0.5" fill="white" />
+  <rect x="6" y="13" width="4" height="1" rx="0.5" fill="white" />
+</svg>

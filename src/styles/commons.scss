@@ -1,0 +1,51 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.opacity {
+  &-0 {
+    opacity: 0;
+  }
+  &-05 {
+    opacity: 0.5;
+  }
+  &-1 {
+    opacity: 1;
+  }
+}
+
+.pre-line {
+  white-space: pre-line;
+}
+
+.shadow {
+  box-shadow: 10px 10px 20px;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.vh25 {
+  height: 25vh;
+}
+
+.vh50 {
+  height: 50vh;
+}
+
+.vh75 {
+  height: 75vh;
+}
+
+.width-fit-content {
+  width: fit-content;
+}
