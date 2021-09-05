@@ -16,7 +16,7 @@ export const Accordions: FC = () => {
     <Accordion
       classes="col-lg-4 my-4 p-0"
       label_child={
-        <Row className="m-0 p-0 px-2 flex-1 justify-content-between bg-ffffff shadow-sm">
+        <Row className="m-0 p-0 px-2 flex-fill justify-content-between bg-ffffff shadow-sm">
           <p className="m-0 p-0 font-20">Custom Label</p>
           <p className="m-0 p-0 font-20">Accordion</p>
         </Row>
@@ -30,7 +30,7 @@ export const Accordions: FC = () => {
     <Accordion
       classes="col-lg-4 my-4 p-0"
       fixed_child={
-        <Row className="m-0 p-0 px-2 flex-1 justify-content-between bg-ffffff shadow-sm">
+        <Row className="m-0 p-0 px-2 flex-fill justify-content-between bg-ffffff shadow-sm">
           <p className="m-0 p-0 font-20">Custom Fixed</p>
           <p className="m-0 p-0 font-20">Accordion</p>
         </Row>
@@ -47,7 +47,7 @@ export const Accordions: FC = () => {
   )
 
   return (
-    <main className="ml-3">
+    <main className="mx-3">
       <h1 className="mb-3 font-32">Accordions</h1>
       {render_standard()}
       {render_custom_label()}

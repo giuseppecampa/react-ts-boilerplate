@@ -17,9 +17,4 @@ $shadow: #333333;
   //   linear-gradient(to right, $shadow, $transparent 20%),
   //   linear-gradient(to left, $shadow, $transparent 20%);
   // background-attachment: local, local, scroll, scroll;
-
-  &::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-  }
 }

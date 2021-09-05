@@ -11,9 +11,9 @@ import { Modals } from './bricks/modals'
 const Intro1: FC = () => {
   const history = useHistory()
   return (
-    <main>
+    <main className="p-3 flex-main">
       <Tabbar
-        classes="m-2 vh75 d-flex flex-column"
+        classes="flex-main flex-fill"
         tabs={[
           { label: 'Fonts', view: <Fonts /> },
           { label: 'Buttons', view: <Buttons /> },
@@ -21,12 +21,14 @@ const Intro1: FC = () => {
           { label: 'Modals', view: <Modals /> },
         ]}
       />
-      <Button
-        flavor="primary_next"
-        text="To Intro 2"
-        classes="ml-3"
-        on_press={() => history.push(TO_INTRO_S2)}
-      />
+
+      <div className="mt-3">
+        <Button
+          flavor="primary_next"
+          text="To Intro 2"
+          on_press={() => history.push(TO_INTRO_S2)}
+        />
+      </div>
     </main>
   )
 }

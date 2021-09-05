@@ -2,7 +2,9 @@ body {
   margin: 0;
   font-family: var(--font-family-ios);
   overflow-x: hidden;
+}
 
+* {
   &::-webkit-scrollbar {
     width: 0;
     height: 0;

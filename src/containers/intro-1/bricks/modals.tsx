@@ -68,7 +68,7 @@ export const Modals: FC = () => {
   )
 
   return (
-    <main className="ml-3">
+    <main className="mx-3">
       <h1 className="mb-3 font-32">Modals</h1>
       {render_simple()}
       {render_custom()}

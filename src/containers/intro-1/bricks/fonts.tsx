@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 export const Fonts: FC = () => {
   return (
-    <main className="ml-3">
+    <main className="mx-3">
       <h1 className="mb-3 font-32">Fonts</h1>
       <p className="m-0 font-20-extralight">Font extralight</p>
       <p className="m-0 font-20-light">Font light</p>

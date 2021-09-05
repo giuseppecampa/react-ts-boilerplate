@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "public": "build",
+    "site": "react-ts-boilerplate-demo",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

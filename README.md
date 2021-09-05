@@ -7,13 +7,14 @@ This is boilerplate to kickstart projects using React with Typescript.
 
 ## Features
 - ⚛️ &nbsp; React
-- 🔥 &nbsp; TypeScript
+- ⛩ &nbsp; TypeScript
 - 👀 &nbsp; ESLint
 - 🌈 &nbsp; Prettier
 - 💄 &nbsp; SCSS
 - 🅱️ &nbsp; Bootstrap
 - 🔷 &nbsp; Material UI
 - 🚀 &nbsp; Redux (redux-store & redux-saga)
+- 🔥 &nbsp; Firebase
 - ☁️ &nbsp; Axios <span style="color:#007AFF">[Coming soon]</span>
 <br/>
 <br/>

@@ -5,7 +5,7 @@ import { Button } from 'src/widgets'
 
 export const Buttons: FC = () => {
   return (
-    <main className="ml-3">
+    <main className="mx-3">
       <h1 className="mb-3 font-32">Buttons</h1>
 
       <Row className="m-0 ml-n2 mt-n2">

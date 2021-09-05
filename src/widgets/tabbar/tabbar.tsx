@@ -1,6 +1,6 @@
 import './tabbar.scss'
 
-import { FC, Fragment, useState } from 'react'
+import { FC, useState } from 'react'
 import SwipeableViews from 'react-swipeable-views'
 import { tab_t, tabbar_t } from 'src/types'
 import { join_str } from 'src/utils'
@@ -11,7 +11,7 @@ export const Tabbar: FC<tabbar_t> = ({
   tabs,
   classes,
   classes_tabs = 'mb-5 bg-ffffff width-fit-content shadow',
-  classes_views = 'flex-1',
+  classes_views = 'flex-fill',
   classes_label = 'font-16 text-capitalize',
   classes_label_active = 'c-accent',
   classes_label_indicator = 'bg-accent-',
@@ -47,7 +47,11 @@ export const Tabbar: FC<tabbar_t> = ({
     </Tabs>
   )
 
-  const render_view = (tab: tab_t, idx: number) => <Fragment key={idx}>{tab?.view}</Fragment>
+  const render_view = (tab: tab_t, idx: number) => (
+    <div key={idx} className={idx === currtab ? '' : 'd-none'}>
+      {tab?.view}
+    </div>
+  )
 
   const render_views = () => (
     <SwipeableViews
@@ -57,7 +61,7 @@ export const Tabbar: FC<tabbar_t> = ({
       className={classes_views}
       containerStyle={{ transition: 'transform 0.35s cubic-bezier(0.15, 0.3, 0.25, 1)' }}
     >
-      {tabs?.map(render_view)}
+      {tabs.map(render_view)}
     </SwipeableViews>
   )
 
