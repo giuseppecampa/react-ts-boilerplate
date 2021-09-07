@@ -1,19 +1,19 @@
 import { createReducer } from 'reduxsauce'
 import { outcomes_store } from 'src/types'
 
-import { outcomes_types } from '../../actions'
+import { store_types } from '../../actions'
 
-export const reduce_your_outcome = (
+export const reduce_bandicoot_created = (
   state: outcomes_store,
-  { your_outcome }: outcomes_store
+  { bandicoot_created }: outcomes_store
 ): outcomes_store => ({
   ...state,
-  your_outcome,
+  bandicoot_created,
 })
 
 export default createReducer(
   {},
   {
-    [outcomes_types.REDUCE_YOUR_OUTCOME]: reduce_your_outcome,
+    [store_types.REDUCE_BANDICOOT_CREATED]: reduce_bandicoot_created,
   }
 )

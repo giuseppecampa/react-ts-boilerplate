@@ -11,19 +11,15 @@ import {
 
 import firestore from './config'
 
-export const get_docs = (collection_: string): Promise<DocumentData> => {
+export const get_branch = (
+  co_name: string,
+  do_name: string,
+  br_name: string
+): Promise<DocumentData> => {
   return new Promise((resolve) => {
-    getDocs(collection(firestore, collection_)).then((res) => {
-      resolve(res.docs.map((d) => d.data()))
-    })
-  })
-}
-
-export const get_doc = (collection_: string, doc_: string): Promise<DocumentData> => {
-  return new Promise((resolve) => {
-    getDoc(doc(firestore, collection_, doc_)).then((res) => {
+    getDoc(doc(firestore, co_name, do_name)).then((res) => {
       if (res.exists()) {
-        resolve(res.data())
+        resolve(res.data()?.[br_name])
       } else {
         resolve({})
       }
@@ -31,25 +27,25 @@ export const get_doc = (collection_: string, doc_: string): Promise<DocumentData
   })
 }
 
-export const set_doc = <T>(collection_: string, doc_: string, data: T): Promise<void> => {
+export const set_branch = <T>(co_name: string, do_name: string, data: T): Promise<void> => {
   return new Promise((resolve) => {
-    setDoc(doc(firestore, collection_, doc_), data).then((res) => {
+    setDoc(doc(firestore, co_name, do_name), data).then((res) => {
       resolve(res)
     })
   })
 }
 
-export const delete_doc = (collection_: string, doc_: string): Promise<void> => {
+export const delete_doc = (co_name: string, do_name: string): Promise<void> => {
   return new Promise((resolve) => {
-    deleteDoc(doc(firestore, collection_, doc_)).then((res) => {
+    deleteDoc(doc(firestore, co_name, do_name)).then((res) => {
       resolve(res)
     })
   })
 }
 
-export const update_doc = <T>(collection_: string, doc_: string, data: T): Promise<void> => {
+export const update_doc = <T>(co_name: string, do_name: string, data: T): Promise<void> => {
   return new Promise((resolve) => {
-    updateDoc(doc(firestore, collection_, doc_), data).then((res) => {
+    updateDoc(doc(firestore, co_name, do_name), data).then((res) => {
       resolve(res)
     })
   })

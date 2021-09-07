@@ -3,6 +3,7 @@
 import { all, takeLatest } from 'redux-saga/effects'
 
 import * as acts from '../actions'
+import * as bandicoot from './bandicoot.saga'
 import * as startup from './startup.saga'
 
 export default function* root() {
@@ -14,6 +15,10 @@ export default function* root() {
      */
 
     // Startup sagas
-    takeLatest(acts.startup_types.SAGA_STARTUP, startup.saga_startup),
+    takeLatest(acts.saga_types.SAGA_STARTUP, startup.saga_startup),
+
+    // Bandicoot sagas
+    takeLatest(acts.saga_types.SAGA_RESOLVE_BANDICOOTS, bandicoot.saga_resolve_bandicoots),
+    takeLatest(acts.saga_types.SAGA_CREATE_BANDICOOT, bandicoot.saga_create_bandicoot),
   ])
 }

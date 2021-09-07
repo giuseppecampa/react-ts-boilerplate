@@ -1,7 +1,7 @@
 import { createReducer } from 'reduxsauce'
 import { loadings_store } from 'src/types'
 
-import { loadings_types } from '../../actions'
+import { store_types } from '../../actions'
 
 export const reduce_loading = (
   state: loadings_store,
@@ -22,6 +22,6 @@ export const reduce_loading = (
 export default createReducer(
   {},
   {
-    [loadings_types.REDUCE_LOADING]: reduce_loading,
+    [store_types.REDUCE_LOADING]: reduce_loading,
   }
 )

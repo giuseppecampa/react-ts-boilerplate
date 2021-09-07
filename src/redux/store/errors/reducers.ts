@@ -1,7 +1,7 @@
 import { createReducer } from 'reduxsauce'
 import { errors_store } from 'src/types'
 
-import { errors_types } from '../../actions'
+import { store_types } from '../../actions'
 
 export const reduce_error = (state: errors_store, { error }: errors_store): errors_store => {
   /**
@@ -19,6 +19,6 @@ export const reduce_error = (state: errors_store, { error }: errors_store): erro
 export default createReducer(
   {},
   {
-    [errors_types.REDUCE_ERROR]: reduce_error,
+    [store_types.REDUCE_ERROR]: reduce_error,
   }
 )

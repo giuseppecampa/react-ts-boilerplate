@@ -1,3 +1,3 @@
-import { opt, redux_store } from 'src/types'
+import { bandicoot_t, opt, redux_store } from 'src/types'
 
-export const select_your_data = (state: redux_store): opt<string> => state.data.your_data
+export const select_bandicoots = (state: redux_store): opt<bandicoot_t[]> => state.data.bandicoots

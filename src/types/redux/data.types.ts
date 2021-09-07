@@ -1,3 +1,5 @@
+import { bandicoot_t } from '../firebase/bandicoot.types'
+
 export interface data_store {
-  your_data?: string
+  bandicoots?: bandicoot_t[]
 }

@@ -25,7 +25,7 @@ const Intro1: FC = () => {
       <div className="mt-3">
         <Button
           flavor="primary_next"
-          text="To Intro 2"
+          text="To Bandicoot"
           on_press={() => history.push(TO_INTRO_S2)}
         />
       </div>

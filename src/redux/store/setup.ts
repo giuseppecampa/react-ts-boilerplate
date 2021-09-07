@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { Reducer } from 'react'
+import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
 import { persistReducer, persistStore } from 'redux-persist'
 import storage from 'redux-persist/lib/storage/session'
 import createSagaMiddleware, { Saga } from 'redux-saga'
 import { saga_act } from 'src/types'
 
-import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
-
-import root_saga from '../sagas'
+import root_saga from '../saga'
 import data_reducers from './data/reducers'
 import errors_reducers from './errors/reducers'
 import history_reducers from './history/reducers'

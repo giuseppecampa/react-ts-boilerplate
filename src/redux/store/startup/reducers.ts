@@ -6,7 +6,7 @@
 import { createReducer } from 'reduxsauce'
 import { startup_store } from 'src/types'
 
-import { startup_types } from '../../actions'
+import { store_types } from '../../actions'
 import INITIAL_STATE from './initial-state'
 
 export const reduce_started = (
@@ -18,5 +18,5 @@ export const reduce_started = (
 })
 
 export default createReducer(INITIAL_STATE, {
-  [startup_types.REDUCE_STARTED]: reduce_started,
+  [store_types.REDUCE_STARTED]: reduce_started,
 })
