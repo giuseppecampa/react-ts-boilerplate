@@ -20,5 +20,6 @@ export default function* root() {
     // Bandicoot sagas
     takeLatest(acts.saga_types.SAGA_RESOLVE_BANDICOOTS, bandicoot.saga_resolve_bandicoots),
     takeLatest(acts.saga_types.SAGA_CREATE_BANDICOOT, bandicoot.saga_create_bandicoot),
+    takeLatest(acts.saga_types.SAGA_REMOVE_BANDICOOT, bandicoot.saga_remove_bandicoot),
   ])
 }
