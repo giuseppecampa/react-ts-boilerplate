@@ -25,7 +25,7 @@ export const DrawerContent: FC<drawer_content_t> = ({
   /**
    * Use Selector
    */
-  const curr_route = useSelector(select_history_item('current-route'))
+  const curr_route = useSelector(select_history_item('current-route')) || '0'
 
   /**
    * Render functions
