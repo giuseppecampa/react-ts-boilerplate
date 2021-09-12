@@ -19,7 +19,7 @@ export const Modal: FC<modal_t> = ({
   const render_close = () =>
     on_close && (
       <div className="mb-3 d-flex justify-content-end">
-        <Image src={close_icon} onClick={on_close} className="cursor-pointer" />
+        <Image src={close_icon} onClick={on_close} className="cursor-pointer filter-grey" />
       </div>
     )
 

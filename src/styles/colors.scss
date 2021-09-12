@@ -2,9 +2,12 @@
   --color-000000: #000000;
   --color-1d1d1f: #1d1d1f;
   --color-302c2c: #302c2c;
+  --color-4e4b4b: #4e4b4b;
   --color-7f7f7f: #7f7f7f;
-  --color-c2c2c2: #c2c2c2;
   --color-bfbfbf: #bfbfbf;
+  --color-c2c2c2: #c2c2c2;
+  --color-cccccc: #cccccc;
+  --color-dfdfdf: #dfdfdf;
   --color-e5e5e5: #e5e5e5;
   --color-f7f7f7: #f7f7f7;
   --color-fafafa: #fafafa;
@@ -14,39 +17,21 @@
   --color-error: #7c2d35;
   --color-warning: #ffbe00;
 
+  $colors: "000000", "1d1d1f", "302c2c", "4e4b4b", "7f7f7f", "bfbfbf", "c2c2c2",
+    "cccccc", "dfdfdf", "e5e5e5", "f7f7f7", "fafafa", "ffffff";
+
   /**
-   * Colors
+   * color & background-color
    */
-  .c-000000 {
-    color: var(--color-000000);
+  @each $color in $colors {
+    .c-#{$color} {
+      color: var(--color-#{$color});
+    }
+    .bg-#{$color} {
+      background-color: var(--color-#{$color});
+    }
   }
-  .c-1d1d1f {
-    color: var(--color-1d1d1f);
-  }
-  .c-302c2c {
-    color: var(--color-302c2c);
-  }
-  .c-7f7f7f {
-    color: var(--color-7f7f7f);
-  }
-  .c-c2c2c2 {
-    color: var(--color-c2c2c2);
-  }
-  .c-bfbfbf {
-    color: var(--color-bfbfbf);
-  }
-  .c-e5e5e5 {
-    color: var(--color-e5e5e5);
-  }
-  .c-f7f7f7 {
-    color: var(--color-f7f7f7);
-  }
-  .c-fafafa {
-    color: var(--color-fafafa);
-  }
-  .c-ffffff {
-    color: var(--color-ffffff);
-  }
+
   .c-primary {
     color: var(--color-primary);
   }
@@ -60,42 +45,6 @@
     color: var(--color-warning);
   }
 
-  /**
-   * Backgrounds
-   */
-  .bg-000000 {
-    background-color: var(--color-000000);
-  }
-  .bg-1d1d1f {
-    background-color: var(--color-1d1d1f);
-  }
-  .bg-302c2c {
-    background-color: var(--color-302c2c);
-  }
-  .bg-7f7f7f {
-    background-color: var(--color-7f7f7f);
-  }
-  .bg-c2c2c2 {
-    background-color: var(--color-c2c2c2);
-  }
-  .bg-bfbfbf {
-    background-color: var(--color-bfbfbf);
-  }
-  .bg-e5e5e5 {
-    background-color: var(--color-e5e5e5);
-  }
-  .bg-f7f7f7 {
-    background-color: var(--color-f7f7f7);
-  }
-  .bg-fafafa {
-    background-color: var(--color-fafafa);
-  }
-  .bg-ffffff {
-    background-color: var(--color-ffffff);
-  }
-  .bg-primary- {
-    background-color: var(--color-primary);
-  }
   .bg-accent- {
     background-color: var(--color-accent);
   }

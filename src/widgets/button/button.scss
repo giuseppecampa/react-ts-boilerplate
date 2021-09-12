@@ -16,15 +16,17 @@ button {
     background-color: $color;
     color: $white;
 
-    &:hover {
-      opacity: 0.6;
-    }
-    &:active {
-      opacity: 0.8;
+    @media screen and (min-width: 1200px) {
+      &:hover {
+        opacity: 0.6;
+      }
     }
     &:disabled {
       opacity: 0.4;
       cursor: not-allowed;
+    }
+    &:active {
+      opacity: 0.8;
     }
 
     &-flip {

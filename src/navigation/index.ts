@@ -1,5 +1,6 @@
 export * from './saga-guards'
 
-export const TO_INTRO_S1 = '/'
-export const TO_INTRO_S2 = '/intro-2'
-export const TO_INTRO_S3 = '/intro-3'
+export const TO_ALIGNS = '/aligns'
+export const TO_INTRO = '/'
+export const TO_FIREBASE = '/firebase'
+export const TO_ROADMAP = '/roadmap'

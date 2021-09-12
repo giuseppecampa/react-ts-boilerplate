@@ -1,13 +1,16 @@
 import { FC, useEffect } from 'react'
 import { Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { close_icon } from 'src/assets'
+import { trash_icon } from 'src/assets'
 import { shoot } from 'src/redux/actions'
 import { select_bandicoots } from 'src/redux/store'
 import { bandicoot_t } from 'src/types'
 import { Button } from 'src/widgets'
 
 const Intro2: FC = () => {
+  /**
+   * Use Dispatch
+   */
   const dispatch = useDispatch()
 
   /**
@@ -38,14 +41,19 @@ const Intro2: FC = () => {
    */
   const render_bandicoots = () =>
     bandicoots?.map(({ name, good }, idx) => (
-      <Row key={idx} className="m-2 align-items-center">
+      <Row
+        key={idx}
+        className="mx-1 my-3 px-3 py-2 align-items-center bg-ffffff rounded shadow"
+        style={{ width: 200 }}
+      >
         <Button
-          iconl={close_icon}
+          iconl={trash_icon}
           classes="p-0 bg-transparent"
-          classes_iconl=""
+          classes_iconl="filter-grey"
+          icon_size={20}
           on_press={() => remove_bandicoot(name)}
         />
-        <p className={`m-2 font-20 ${good ? 'c-primary' : 'c-accent'}`}>{name}</p>
+        <p className={`m-2 ml-3 font-20 ${good ? 'c-primary' : 'c-accent'}`}>{name}</p>
       </Row>
     ))
 
@@ -61,9 +69,8 @@ const Intro2: FC = () => {
 
   return (
     <main className="p-3">
-      <h1>Bandicoots</h1>
-
-      {render_bandicoots()}
+      <h1 className="font-32">Bandicoots</h1>
+      <h3 className="font-22 c-7f7f7f">Firebase interaction example</h3>
 
       <Row className="m-0">
         {render_button({ name: 'Crash', good: true })}
@@ -78,6 +85,8 @@ const Intro2: FC = () => {
         {render_button({ name: 'Kong', good: false })}
         {render_button({ name: 'Rilla Roo', good: false })}
       </Row>
+
+      {render_bandicoots()}
     </main>
   )
 }

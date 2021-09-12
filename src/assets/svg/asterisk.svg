@@ -7,7 +7,7 @@
 >
   <path
     d="M18.0977 1V39"
-    stroke="white"
+    stroke="currentColor"
     stroke-width="2"
     stroke-miterlimit="10"
     stroke-linecap="round"
@@ -15,7 +15,7 @@
   />
   <path
     d="M1 10.5L35 29.5"
-    stroke="white"
+    stroke="currentColor"
     stroke-width="2"
     stroke-miterlimit="10"
     stroke-linecap="round"
@@ -23,7 +23,7 @@
   />
   <path
     d="M1 29.5L35 10.5"
-    stroke="white"
+    stroke="currentColor"
     stroke-width="2"
     stroke-miterlimit="10"
     stroke-linecap="round"

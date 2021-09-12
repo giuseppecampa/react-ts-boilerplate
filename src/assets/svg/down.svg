@@ -7,7 +7,7 @@
 >
   <path
     d="M1 1L9 9L17 1"
-    stroke="#000000"
+    stroke="currentColor"
     stroke-miterlimit="10"
     stroke-linecap="round"
     stroke-linejoin="round"

@@ -1,27 +1,37 @@
 import { lazy } from 'react'
 
-import { TO_INTRO_S1, TO_INTRO_S2, TO_INTRO_S3 } from './'
+import { TO_ALIGNS, TO_FIREBASE, TO_INTRO, TO_ROADMAP } from './'
 
-const IntroS1 = lazy(() => import('src/containers/intro-1/intro-1'))
-const IntroS2 = lazy(() => import('src/containers/intro-2/intro-2'))
-const IntroS3 = lazy(() => import('src/containers/intro-3/intro-3'))
+const Aligns = lazy(() => import('src/containers/aligns/aligns'))
+const Intro = lazy(() => import('src/containers/intro/intro'))
+const Firabase = lazy(() => import('src/containers/firebase/firebase'))
+const Roadmap = lazy(() => import('src/containers/roadmap/roadmap'))
 
-interface route_t {
+export interface route_t {
   path: string
+  name: string
   component: JSX.Element
 }
 
 export const routes: route_t[] = [
   {
-    path: TO_INTRO_S1,
-    component: <IntroS1 />,
+    path: TO_INTRO,
+    name: 'Intro',
+    component: <Intro />,
   },
   {
-    path: TO_INTRO_S2,
-    component: <IntroS2 />,
+    path: TO_FIREBASE,
+    name: 'Firebase',
+    component: <Firabase />,
   },
   {
-    path: TO_INTRO_S3,
-    component: <IntroS3 />,
+    path: TO_ALIGNS,
+    name: 'Alignments',
+    component: <Aligns />,
+  },
+  {
+    path: TO_ROADMAP,
+    name: 'Roadmap',
+    component: <Roadmap />,
   },
 ]

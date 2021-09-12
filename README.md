@@ -9,7 +9,7 @@ Demo: https://react-ts-boilerplate-demo.web.app/
 
 ## Features
 - ⚛️ &nbsp; React
-- ⛩ &nbsp; TypeScript
+- ⚓ &nbsp; TypeScript
 - 👀 &nbsp; ESLint
 - 🌈 &nbsp; Prettier
 - 💄 &nbsp; SCSS
@@ -18,6 +18,25 @@ Demo: https://react-ts-boilerplate-demo.web.app/
 - 🚀 &nbsp; Redux (redux-store & redux-saga)
 - 🔥 &nbsp; Firebase
 - ☁️ &nbsp; Axios <span style="color:#007AFF">[Coming soon]</span>
+- 🌎 &nbsp; i18n <span style="color:#007AFF">[Coming soon]</span>
+<br/>
+<br/>
+
+## Widgets
+- Accordion
+- Button
+- Carousel <span style="color:#007AFF">[Coming soon]</span>
+- CheckBox <span style="color:#007AFF">[Coming soon]</span>
+- DatePicker <span style="color:#007AFF">[Coming soon]</span>
+- Drawer
+- Footer <span style="color:#007AFF">[Coming soon]</span>
+- Header
+- InputText <span style="color:#007AFF">[Coming soon]</span>
+- Loader <span style="color:#007AFF">[Coming soon]</span>
+- Modal
+- RadioGroup <span style="color:#007AFF">[Coming soon]</span>
+- SelectMenu <span style="color:#007AFF">[Coming soon]</span>
+- Tabbar
 <br/>
 <br/>
 
@@ -57,24 +76,6 @@ Demo: https://react-ts-boilerplate-demo.web.app/
     - <span style="color:#8E8E93">dashboard-core</span>
     - <span style="color:#8E8E93">form-item</span>
     - <span style="color:#8E8E93">...</span>
-<br/>
-<br/>
-
-## Widgets
-- Accordion
-- Button
-- Carousel <span style="color:#007AFF">[Coming soon]</span>
-- CheckBox <span style="color:#007AFF">[Coming soon]</span>
-- DatePicker <span style="color:#007AFF">[Coming soon]</span>
-- Drawer
-- Header
-- InputText <span style="color:#007AFF">[Coming soon]</span>
-- Modal
-- Header
-- Modal
-- RadioGroup <span style="color:#007AFF">[Coming soon]</span>
-- SelectMenu <span style="color:#007AFF">[Coming soon]</span>
-- Tabbar
 <br/>
 <br/>
 

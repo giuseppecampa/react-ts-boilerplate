@@ -7,21 +7,21 @@
 >
   <path
     d="M1 17H17"
-    stroke="#000000"
+    stroke="currentColor"
     stroke-miterlimit="10"
     stroke-linecap="round"
     stroke-linejoin="round"
   />
   <path
     d="M3.6665 9L8.99984 14.3333L14.3332 9"
-    stroke="#000000"
+    stroke="currentColor"
     stroke-miterlimit="10"
     stroke-linecap="round"
     stroke-linejoin="round"
   />
   <path
     d="M9 14.3333V1"
-    stroke="#000000"
+    stroke="currentColor"
     stroke-miterlimit="10"
     stroke-linecap="round"
     stroke-linejoin="round"
