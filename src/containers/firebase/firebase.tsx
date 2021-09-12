@@ -1,10 +1,10 @@
-import { FC, useEffect } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { trash_icon } from 'src/assets'
 import { shoot } from 'src/redux/actions'
 import { select_bandicoots } from 'src/redux/store'
-import { bandicoot_t } from 'src/types'
+import { bandicoot_t, opt } from 'src/types'
 import { Button } from 'src/widgets'
 
 const Intro2: FC = () => {
@@ -19,11 +19,22 @@ const Intro2: FC = () => {
   const bandicoots = useSelector(select_bandicoots)
 
   /**
+   * Use State
+   */
+  const [bandicoots_, set_bandicoots_] = useState<opt<bandicoot_t[]>>(undefined)
+
+  /**
    * Use Effect
    */
   useEffect(() => {
     dispatch(shoot.saga_resolve_bandicoots())
   }, [])
+
+  useEffect(() => {
+    if (!bandicoots_) {
+      set_bandicoots_(bandicoots)
+    }
+  }, [bandicoots])
 
   /**
    * Support functions
@@ -40,7 +51,7 @@ const Intro2: FC = () => {
    * Render functions
    */
   const render_bandicoots = () =>
-    bandicoots?.map(({ name, good }, idx) => (
+    bandicoots_?.map(({ name, good }, idx) => (
       <Row
         key={idx}
         className="mx-1 my-3 px-3 py-2 align-items-center bg-ffffff rounded shadow"
@@ -51,7 +62,10 @@ const Intro2: FC = () => {
           classes="p-0 bg-transparent"
           classes_iconl="filter-grey"
           icon_size={20}
-          on_press={() => remove_bandicoot(name)}
+          on_press={() => {
+            set_bandicoots_(bandicoots_?.filter(({ name: n }) => n !== name))
+            remove_bandicoot(name)
+          }}
         />
         <p className={`m-2 ml-3 font-20 ${good ? 'c-primary' : 'c-accent'}`}>{name}</p>
       </Row>
@@ -62,8 +76,11 @@ const Intro2: FC = () => {
       flavor={bandicoot?.good ? 'primary' : 'accent'}
       text={`Create ${bandicoot?.name?.toUpperCase()}`}
       classes="m-1"
-      disabled={!!bandicoots?.find(({ name }) => name === bandicoot?.name)}
-      on_press={() => create_bandicoot(bandicoot)}
+      disabled={!!bandicoots_?.find(({ name: n }) => n === bandicoot?.name)}
+      on_press={() => {
+        set_bandicoots_([...(bandicoots_ || []), bandicoot])
+        create_bandicoot(bandicoot)
+      }}
     />
   )
 

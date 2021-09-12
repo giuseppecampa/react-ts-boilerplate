@@ -21,12 +21,12 @@ button {
         opacity: 0.6;
       }
     }
+    &:active {
+      opacity: 0.8;
+    }
     &:disabled {
       opacity: 0.4;
       cursor: not-allowed;
-    }
-    &:active {
-      opacity: 0.8;
     }
 
     &-flip {
