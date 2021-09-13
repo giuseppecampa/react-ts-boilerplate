@@ -2,10 +2,20 @@ import { FC, useEffect, useState } from 'react'
 import { Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { trash_icon } from 'src/assets'
+import { SAGA_GUARDS } from 'src/navigation'
 import { shoot } from 'src/redux/actions'
-import { select_bandicoots } from 'src/redux/store'
-import { bandicoot_t, opt } from 'src/types'
-import { Button } from 'src/widgets'
+import { select_bandicoots, select_loading } from 'src/redux/store'
+import { bandicoot_t, dict } from 'src/types'
+import { is_obj_empty } from 'src/utils'
+import { Button, Loader } from 'src/widgets'
+
+import { bandicoot_config } from './smart-config'
+
+interface progress_t {
+  disabled?: boolean
+  loading_create?: boolean
+  loading_remove?: boolean
+}
 
 const Intro2: FC = () => {
   /**
@@ -16,12 +26,16 @@ const Intro2: FC = () => {
   /**
    * Use Selectors
    */
+  const loading_rsl = useSelector(select_loading([SAGA_GUARDS.RESOLVE_BANDICOOTS]))
+  const loading_rmv = useSelector(select_loading([SAGA_GUARDS.REMOVE_BANDICOOT]))
+  const loading_crt = useSelector(select_loading([SAGA_GUARDS.CREATE_BANDICOOT]))
   const bandicoots = useSelector(select_bandicoots)
 
   /**
    * Use State
    */
-  const [bandicoots_, set_bandicoots_] = useState<opt<bandicoot_t[]>>(undefined)
+  const [progresses, set_progresses] = useState<dict<progress_t>>({})
+  const [curr_bandicoot_name, set_curr_bandicoot_name] = useState('')
 
   /**
    * Use Effect
@@ -31,19 +45,54 @@ const Intro2: FC = () => {
   }, [])
 
   useEffect(() => {
-    if (!bandicoots_) {
-      set_bandicoots_(bandicoots)
-    }
-  }, [bandicoots])
+    init_progresses()
+  }, [bandicoots, progresses])
+
+  useEffect(() => {
+    refresh_progresses()
+  }, [bandicoots, curr_bandicoot_name, loading_rmv, loading_crt])
 
   /**
    * Support functions
    */
+  const init_progresses = () => {
+    if (bandicoots && is_obj_empty(progresses)) {
+      const progs: dict<progress_t> = {}
+      bandicoot_config?.forEach(({ name }) => {
+        progs[name] = { disabled: false, loading_create: false, loading_remove: false }
+      })
+      bandicoots?.forEach(({ name }) => {
+        progs[name].disabled = true
+      })
+      set_progresses(progs)
+    }
+  }
+
+  const refresh_progresses = () => {
+    const progs: dict<progress_t> = {}
+    Object.entries(progresses)?.forEach(([name, band]) => {
+      progs[name] = {
+        ...band,
+        disabled: !!bandicoots?.find(({ name: n }) => n === name),
+      }
+      if (name === curr_bandicoot_name) {
+        progs[name] = {
+          ...progs[name],
+          loading_create: loading_crt,
+          loading_remove: loading_rmv,
+        }
+      }
+    })
+    set_progresses(progs)
+  }
+
   const create_bandicoot = (bandicoot: bandicoot_t) => {
+    set_curr_bandicoot_name(bandicoot?.name)
     dispatch(shoot.saga_create_bandicoot(bandicoot))
   }
 
   const remove_bandicoot = (bandicoot_name: string) => {
+    set_curr_bandicoot_name(bandicoot_name)
     dispatch(shoot.saga_remove_bandicoot(bandicoot_name))
   }
 
@@ -51,7 +100,7 @@ const Intro2: FC = () => {
    * Render functions
    */
   const render_bandicoots = () =>
-    bandicoots_?.map(({ name, good }, idx) => (
+    bandicoots?.map(({ name, good }, idx) => (
       <Row
         key={idx}
         className="mx-1 my-3 px-3 py-2 align-items-center bg-ffffff rounded shadow"
@@ -59,29 +108,37 @@ const Intro2: FC = () => {
       >
         <Button
           iconl={trash_icon}
-          classes="p-0 bg-transparent"
+          classes="p-0 bg-transparent c-4e4b4b"
           classes_iconl="filter-grey"
+          classes_loader="absolute-center icon-size"
           icon_size={20}
-          on_press={() => {
-            set_bandicoots_(bandicoots_?.filter(({ name: n }) => n !== name))
-            remove_bandicoot(name)
-          }}
+          disabled={loading_rmv || loading_crt}
+          loading={progresses[name]?.loading_remove}
+          on_press={() => remove_bandicoot(name)}
         />
         <p className={`m-2 ml-3 font-20 ${good ? 'c-primary' : 'c-accent'}`}>{name}</p>
       </Row>
     ))
 
-  const render_button = (bandicoot: bandicoot_t) => (
+  const render_button = ({ name, good }: bandicoot_t) => (
     <Button
-      flavor={bandicoot?.good ? 'primary' : 'accent'}
-      text={`Create ${bandicoot?.name?.toUpperCase()}`}
+      flavor={good ? 'primary' : 'accent'}
+      text={`Create ${name?.toUpperCase()}`}
       classes="m-1"
-      disabled={!!bandicoots_?.find(({ name: n }) => n === bandicoot?.name)}
-      on_press={() => {
-        set_bandicoots_([...(bandicoots_ || []), bandicoot])
-        create_bandicoot(bandicoot)
-      }}
+      disabled={progresses[name]?.disabled || loading_rmv || loading_crt}
+      loading={progresses[name]?.loading_create}
+      on_press={() => create_bandicoot({ name, good })}
     />
+  )
+
+  const render_button_row = (good?: boolean) => (
+    <Row className="m-0">
+      {bandicoot_config
+        ?.filter(({ good: g }) => (good ? g : !g))
+        ?.map((bandicoot, idx) => (
+          <div key={idx}>{render_button(bandicoot)}</div>
+        ))}
+    </Row>
   )
 
   return (
@@ -89,21 +146,15 @@ const Intro2: FC = () => {
       <h1 className="font-32">Bandicoots</h1>
       <h3 className="font-22 c-7f7f7f">Firebase interaction example</h3>
 
-      <Row className="m-0">
-        {render_button({ name: 'Crash', good: true })}
-        {render_button({ name: 'Coco', good: true })}
-        {render_button({ name: 'Tiny', good: true })}
-        {render_button({ name: 'Dingodile', good: true })}
-      </Row>
-
-      <Row className="m-0">
-        {render_button({ name: 'Cortex', good: false })}
-        {render_button({ name: 'Brio', good: false })}
-        {render_button({ name: 'Kong', good: false })}
-        {render_button({ name: 'Rilla Roo', good: false })}
-      </Row>
-
-      {render_bandicoots()}
+      {loading_rsl ? (
+        <Loader />
+      ) : (
+        <>
+          {render_button_row(true)}
+          {render_button_row()}
+          {render_bandicoots()}
+        </>
+      )}
     </main>
   )
 }

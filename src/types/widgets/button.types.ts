@@ -25,6 +25,7 @@ export interface button_t {
   // Logic
   form_id?: string
   disabled?: boolean
+  loading?: boolean
   type?: type_t
   on_press?: () => void
 
@@ -38,4 +39,5 @@ export interface button_t {
   classes_text?: string
   classes_iconl?: string
   classes_iconr?: string
+  classes_loader?: string
 }

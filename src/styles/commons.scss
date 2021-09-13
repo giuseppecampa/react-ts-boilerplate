@@ -1,3 +1,12 @@
+.absolute-center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -36,6 +45,11 @@
   -moz-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.icon-size {
+  height: 20px;
+  width: 20px;
 }
 
 .opacity {

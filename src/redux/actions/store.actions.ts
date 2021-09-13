@@ -12,7 +12,7 @@ const { Types, Creators } = createActions({
   reduce_history_item: ['key', 'value'],
 
   // Loadings store
-  reduce_loading: ['loading', 'saga_type'],
+  reduce_loading: ['saga_type', 'loading'],
 
   // Data store
   reduce_bandicoots: ['bandicoots'],

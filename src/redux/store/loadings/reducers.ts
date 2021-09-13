@@ -5,7 +5,7 @@ import { store_types } from '../../actions'
 
 export const reduce_loading = (
   state: loadings_store,
-  args: { loading: boolean; saga_type?: string }
+  args: { saga_type: string; loading: boolean }
 ): loadings_store => {
   /**
    * @Replace with your reducing logic

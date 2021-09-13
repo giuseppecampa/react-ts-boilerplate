@@ -5,11 +5,13 @@ import { Image } from 'react-bootstrap'
 import { button_t } from 'src/types'
 import { join_str } from 'src/utils'
 
+import { Loader } from '../'
 import { flavors } from './button.flavors'
 
 export const Button: FC<button_t> = ({
   form_id,
   disabled,
+  loading,
   type = 'button',
   on_press,
   text,
@@ -21,6 +23,7 @@ export const Button: FC<button_t> = ({
   classes_text = 'font-20',
   classes_iconl = 'mr-3',
   classes_iconr = 'ml-3',
+  classes_loader = 'absolute-center',
 }: button_t) => {
   /**
    * Alias
@@ -37,6 +40,9 @@ export const Button: FC<button_t> = ({
     text: join_str(classes_text, fl?.classes_text),
     iconl: join_str(classes_iconl, fl?.classes_iconl),
     iconr: join_str(classes_iconr, fl?.classes_iconr),
+    wrap_button: loading ? 'opacity-0' : 'opacity-1 d-flex align-items-center',
+    wrap_loader: loading ? 'opacity-1' : 'opacity-0',
+    loader: classes_loader,
   }
 
   /**
@@ -52,13 +58,20 @@ export const Button: FC<button_t> = ({
     <button
       type={type}
       className={classes_.button}
-      disabled={disabled}
+      disabled={disabled || loading}
       onClick={on_press}
       form={form_id}
+      style={{ position: 'relative' }}
     >
-      {render_iconl()}
-      {render_text()}
-      {render_iconr()}
+      <div className={classes_.wrap_button}>
+        {render_iconl()}
+        {render_text()}
+        {render_iconr()}
+      </div>
+
+      <div className={classes_.wrap_loader}>
+        <Loader classes={classes_.loader} />
+      </div>
     </button>
   )
 }
