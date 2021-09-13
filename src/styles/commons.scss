@@ -7,6 +7,10 @@
   margin: auto;
 }
 
+.border-100 {
+  border-radius: 100%;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -52,6 +56,10 @@
   width: 20px;
 }
 
+.left-0 {
+  left: 0;
+}
+
 .opacity {
   &-0 {
     opacity: 0;
@@ -70,6 +78,10 @@
 
 .pre-line {
   white-space: pre-line;
+}
+
+.right-0 {
+  right: 0;
 }
 
 .shadow {

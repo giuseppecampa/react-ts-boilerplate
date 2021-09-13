@@ -19,6 +19,7 @@ Demo: https://react-ts-boilerplate-demo.web.app/
 - 🔥 &nbsp; Firebase
 - ☁️ &nbsp; Axios <span style="color:#007AFF">[Coming soon]</span>
 - 🌎 &nbsp; i18n <span style="color:#007AFF">[Coming soon]</span>
+- 📋 &nbsp; Formik <span style="color:#007AFF">[Coming soon]</span>
 <br/>
 <br/>
 

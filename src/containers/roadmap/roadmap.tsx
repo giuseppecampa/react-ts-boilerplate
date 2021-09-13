@@ -18,6 +18,7 @@ const Roadmap: FC = () => {
     { name: '🔥 Firebase' },
     { name: '☁️ Axios', todo: true },
     { name: '🌎 i18n', todo: true },
+    { name: '📋 Formik', todo: true },
   ]
   const widgets: item_t[] = [
     { name: 'Button' },
