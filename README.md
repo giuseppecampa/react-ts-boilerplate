@@ -33,7 +33,7 @@ Demo: https://react-ts-boilerplate-demo.web.app/
 - Footer <span style="color:#007AFF">[Coming soon]</span>
 - Header
 - InputText <span style="color:#007AFF">[Coming soon]</span>
-- Loader <span style="color:#007AFF">[Coming soon]</span>
+- Loader
 - Modal
 - RadioGroup <span style="color:#007AFF">[Coming soon]</span>
 - SelectMenu <span style="color:#007AFF">[Coming soon]</span>
