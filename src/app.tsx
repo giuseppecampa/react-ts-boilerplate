@@ -4,9 +4,7 @@ import React, { Suspense } from 'react'
 import { Container, Row } from 'react-bootstrap'
 import { Route, Switch } from 'react-router'
 import { routes } from 'src/navigation/routes'
-
-import { Header } from './widgets'
-import { DrawerContent } from './widgets/drawer/drawer-content'
+import { DrawerContent, Header } from 'src/widgets'
 
 const App: React.FC = () => {
   /**

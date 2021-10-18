@@ -1,6 +1,7 @@
 export * from './accordion/accordion'
 export * from './button/button'
 export * from './drawer/drawer'
+export * from './drawer/drawer-content'
 export * from './header/header'
 export * from './input-text/input-text'
 export * from './loader/loader'
