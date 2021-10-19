@@ -2,10 +2,10 @@ import { lazy } from 'react'
 
 import { TO_ALIGNS, TO_FIREBASE, TO_INTRO, TO_ROADMAP } from './'
 
-const Aligns = lazy(() => import('src/containers/aligns/aligns'))
-const Intro = lazy(() => import('src/containers/intro/intro'))
-const Firabase = lazy(() => import('src/containers/firebase/firebase'))
-const Roadmap = lazy(() => import('src/containers/roadmap/roadmap'))
+const Aligns = lazy(() => import('src/screens/aligns/aligns'))
+const Intro = lazy(() => import('src/screens/intro/intro'))
+const Firabase = lazy(() => import('src/screens/firebase/firebase'))
+const Roadmap = lazy(() => import('src/screens/roadmap/roadmap'))
 
 export interface route_t {
   path: string
