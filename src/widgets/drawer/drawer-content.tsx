@@ -1,10 +1,7 @@
 import { FC } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router'
 import { APP_ENV, APP_VERSION } from 'src/config'
 import { route_t, routes } from 'src/navigation/routes'
-import { shoot } from 'src/redux/actions'
-import { select_history_item } from 'src/redux/store'
 import { drawer_content_t } from 'src/types'
 
 import { Button } from '../'
@@ -19,31 +16,23 @@ export const DrawerContent: FC<drawer_content_t> = ({
   const history = useHistory()
 
   /**
-   * Use Dispatch
-   */
-  const dispatch = useDispatch()
-
-  /**
    * Use Selector
    */
-  const curr_route = useSelector(select_history_item('current-route')) || '0'
+  const curr_route = history?.location?.pathname || '/'
 
   /**
    * Render functions
    */
   const render_route = ({ path, name }: route_t, idx: number) => {
-    const idx_str = `${idx}`
     return (
       <div key={idx}>
         <Button
           text={name}
           classes={`w-100 rounded-0 ${
-            idx_str === curr_route ? 'bg-dfdfdf c-7f7f7f' : 'bg-cccccc c-4e4b4b'
+            path === curr_route ? 'bg-dfdfdf c-7f7f7f' : 'bg-cccccc c-4e4b4b'
           }`}
           on_press={() => {
-            dispatch(shoot.reduce_history_item('current-route', idx_str))
-
-            if (idx_str !== curr_route) {
+            if (path !== curr_route) {
               history.push(path)
             }
           }}
